@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'angularjs-rails', '~> 1.2.25'
 gem 'bootstrap-sass', '~> 3.2.0.2'
+gem 'responders', '~> 2.0'
 
 group :development, :test do
   gem 'byebug'

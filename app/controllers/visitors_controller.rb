@@ -8,7 +8,7 @@ class VisitorsController < ApplicationController
   end
 
   def create
-    respond_with Visitor.create(visitors_params)
+    respond_with Visitor.create(visitor_params)
   end
 
   def destroy

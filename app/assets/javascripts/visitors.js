@@ -1,13 +1,13 @@
-var visitorCenter = angular.module('visitorCenter', ['ngResource']);
+var visitorCenter = angular.module('VisitorCenter', ['ngResource']);
 
-visitorCenter.factory('Visitor', function($resource) {
-  return $resource('visitors/:id', { id: '@id' }, {
-    index: { method: 'GET', isArray: true, responseType: 'json' },
-    update: { method: 'PUT', responseType: 'json' }
+visitorCenter.factory("Visitor", function($resource) {
+  return $resource("visitors/:id", { id: '@id' }, {
+    index:   { method: 'GET', isArray: true, responseType: 'json' },
+    update:  { method: 'PUT', responseType: 'json' }
   });
 })
 
-visitorCenter.controller('visitorsController', function($scope, Visitor) {
+visitorCenter.controller("visitorsController", function($scope, Visitor) {
   $scope.visitors = Visitor.index()
 
   $scope.addVisitor = function() {
@@ -18,6 +18,7 @@ visitorCenter.controller('visitorsController', function($scope, Visitor) {
   }
 
   $scope.deleteVisitor = function(index) {
+
     visitor = $scope.visitors[index]
     Visitor.delete(visitor)
     $scope.visitors.splice(index, 1);
